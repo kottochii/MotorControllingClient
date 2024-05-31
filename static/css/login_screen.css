@@ -1,0 +1,42 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+#screen
+{
+    margin: 2% auto;
+    min-width: 180px;
+    width: 35%;
+}
+#screen button
+{
+    width: 100%;
+    padding: 40% 0;
+    text-align: center;
+    font-size: medium;
+}
+
+#screen tr:not(:nth-child(1)) td
+{
+    width: 33.33%;
+}
+#pin_appear
+{
+    height: 15px;
+}
+#timer_bar
+{
+    width: 100%;
+}
+body 
+{
+    user-select: none;
+}
+
+#emergency_floating_msg
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}

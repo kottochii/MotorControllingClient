@@ -1,0 +1,14 @@
+#control_panel
+{
+    margin: 5% auto;
+    width: 60%;
+    min-width: 650px;
+}
+#control_panel, #control_panel td
+{
+    border: 1px solid #000;
+}
+#control_panel td
+{
+    padding: 3px;
+}

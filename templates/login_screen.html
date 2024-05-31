@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/socket.io.min.js"></script>
+    <script src="/static/js/login_screen.js"></script>
+    <link rel="stylesheet" href="/static/css/login_screen.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/motor_control.css" type="text/css" />
+    <script src="/static/js/message_handler.js"></script>
+</head>
+<body>
+    <div id="screen_wrap" data-for-state="logout">
+        <div id="emergency_floating_msg"></div>
+        <table id="screen">
+            <tr>
+                <!-- PIN with dots -->
+                <td colspan="3">
+                    <p id="pin_appear">Start failed.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="keypad_key" data-value="1">1</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="2">2</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="3">3</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="keypad_key" data-value="4">4</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="5">5</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="6">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="keypad_key" data-value="7">7</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="8">8</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="9">9</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="keypad_key" data-value="clear">CLR</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="0">0</button>
+                </td>
+                <td>
+                    <button class="keypad_key" data-value="enter">ENTER</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <progress value="0" id="timer_bar"></progress>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <p id="login_error" style="color: #f00;"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="control_wrap" data-for-state="login">
+        <table id="control_panel">
+            <tbody class="technical">
+            <tr class="technical">
+                <td colspan="3">
+                    Logged in as: <span data-logged-in-userdata="" id="control_panel_user_id"></span>
+                </td>
+            </tr>
+            <tr class="technical">
+                <td colspan="2"></td>
+                <td>
+                    <button data-action="signout">Sign out</button>
+                </td>
+            </tr>
+            <tr class="technical">
+                <td colspan="2">
+                    Time left:
+                </td>
+                <td>
+                    <progress value="0" id="control_panel_time_left"></progress>
+                </td>
+            </tr>
+            <tr class="technical">
+                <td colspan="2"><span id="register_card_status"></span></td>
+                <td><button id="register_card_btn">Register</button></td>
+            </tr>
+            <tr class="technical">
+                <td>Motor slug</td>
+                <td>Actions</td>
+                <td>Status</td>
+            </tr>
+            </tbody>
+            <tbody data-purpose="devices"></tbody>
+        <!--
+            <tr>
+                <td>Garage door</td>
+                <td>
+                    <button data-motor-id="garage_door" data-action="servo-like:open">open</button>
+                    <button data-motor-id="garage_door" data-action="servo-like:close">close</button>
+                </td>
+                <td>
+                    <span class="motor-state" data-motor-id="garage_door"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Wicket door</td>
+                <td>
+                    <button data-motor-id="wicket" data-action="door-like:open">open</button>
+                </td>
+                <td>
+                    <span class="motor-state" data-motor-id="garage_door"></span>
+                </td>
+            </tr>
+        -->
+        </table>
+    </div>
+</body>
+</html>
