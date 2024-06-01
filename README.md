@@ -8,7 +8,6 @@ Clone this repository in any directory. Once it is done, create a virtual enviro
  * `flask`
  * `flask-socketio`
  * `requests`
- * `json`
 
 As this is done, via your virtual environment, you can run the directory in its `bin/python3` and specifying `host` (must be in format of `http://hostname:port/` with trailing slash and the protocol mentioned), `app_id` and `app_public_key` that is set in the database. It should be available at `http://localhost:5000/`
 
